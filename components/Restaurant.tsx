@@ -1,5 +1,6 @@
 import { PersonStanding } from "lucide-react";
 import React from "react";
+import Button from "./ui/Button";
 
 export default function Restaurant({
   name,
@@ -17,10 +18,7 @@ export default function Restaurant({
         <p className="text-[#434242]">{times}</p>
       </div>
 
-      <div className="px-2 py-1 border gap-2 flex rounded-lg items-center bg-[#4FB268] ">
-        <PersonStanding color="#00FF73" />
-        <p className="text-[24px] text-[#00FF73] font-semibold">{amount}</p>
-      </div>
+      <Button variant={"tardy"} amount={23} />
     </div>
   );
 }

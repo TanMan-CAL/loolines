@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Restaurant from "./components/Restaurant";
+import Restaurant from "../components/Restaurant";
+import { restaurants_slc } from "@/constants/restaurants";
 
 export default function Home() {
   return (
@@ -10,15 +11,13 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
-        <Restaurant name={"Timmies"} times={"12:30 - 8:30"} amount={12} />
+        {restaurants_slc.map((restaurant) => (
+          <Restaurant
+            name={restaurant.name}
+            times={restaurant.hours}
+            amount={12}
+          />
+        ))}
       </div>
     </div>
   );
