@@ -13,11 +13,15 @@ export default function Home() {
       <div className="flex flex-col gap-4">
         {restaurants_slc.map((restaurant) => (
           <Restaurant
+            key={restaurant.name}
             name={restaurant.name}
             times={restaurant.hours}
             amount={12}
           />
         ))}
+      </div>
+      <div className="flex justify-center p-4 bg-green-200">
+        <p className="text-xl justify-center">Number of people: {}</p>
       </div>
     </div>
   );
