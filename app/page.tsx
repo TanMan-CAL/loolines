@@ -1,6 +1,25 @@
 import Image from "next/image";
 import Restaurant from "../components/Restaurant";
 import { restaurants_slc } from "@/constants/restaurants";
+import { useState, useEffect } from "react";
+import { supabase } from "./supabase";
+
+interface customerData {
+  restaurants: string;
+  customers: number;
+}
+
+const channel = supabase
+  .channel('schema-db-changes')
+  .on(
+    'postgres_changes',
+    {
+      event: 'UPDATE',
+      schema: 'public',
+    },
+    (payload) => console.log(payload)
+  )
+  .subscribe()
 
 export default function Home() {
   return (
