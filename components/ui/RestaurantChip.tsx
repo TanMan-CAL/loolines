@@ -1,5 +1,7 @@
 import React from "react";
 import { PersonStanding } from "lucide-react";
+import { Timer } from "lucide-react";
+
 
 function PeopleChip({ count }: { count: number }) {
   const quickStyle = "bg-[#4FB268] text-[#00FF73]";
@@ -15,6 +17,18 @@ function PeopleChip({ count }: { count: number }) {
       <p className="font-semibold">{count}</p>
     </div>
   );
+}
+
+function TimeChip( { count }: { count: number } ) {
+  return (
+    <div
+      className={`px-2 py-1 border gap-2 flex rounded-lg items-center bg-[#e1e3e6] text-[#717882]`}
+    >
+      <Timer />
+      <p className="font-semibold text-2xl">{count * 1.5}</p>
+      <p className="font-semibold font-xs mb-[-3px]">min</p>
+    </div>
+  )
 }
 
 export default function Restaurant({
@@ -33,7 +47,10 @@ export default function Restaurant({
         <p className="text-[#5b5b5b]">{times}</p>
       </div>
 
-      <PeopleChip count={count} />
+      <div className="flex gap-[8px]">
+        <PeopleChip count={count} />
+        <TimeChip count={count} />
+      </div>
     </div>
   );
 }

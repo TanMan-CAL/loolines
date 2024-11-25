@@ -12,7 +12,7 @@ interface CustomerData {
 
 export default function Menu() {
   const { getLatestCustomers } = useRestaurant();
-  const [count, setCount] = useState<number>(-1); // Initialize count
+  const [count, setCount] = useState<number>(0); // Initialize count
   const [time, setTime] = useState<string>("00:00");
 
   useEffect(() => {
