@@ -3,7 +3,7 @@ import Image from "next/image";
 import Restaurant from "../components/Restaurant";
 import { restaurants_slc } from "@/constants/restaurants";
 import { useState, useEffect } from "react";
-import { supabase } from "./supabase";
+import { createSupabaseClient } from "@/lib/supabase/client";
 
 interface CustomerData {
   restaurants: string;
@@ -11,6 +11,7 @@ interface CustomerData {
 }
 
 export default function Home() {
+  const supabase = createSupabaseClient();
   const [count, setCount] = useState<number | null>(null); // Initialize count
 
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function Home() {
         {
           event: "UPDATE",
           schema: "public",
+          table: "customersAtRestaurantsV2",
         },
         (payload: any) => {
           console.log("Received payload:", payload);
