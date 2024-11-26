@@ -46,8 +46,8 @@ export default function Dots() {
   // Generate random positions for dots
   const generateRandomPositions = (dotCount: number) => {
     const newPositions = Array.from({ length: dotCount }, () => ({
-      x: Math.random() * 100, // Random percentage for X
-      y: Math.random() * 100, // Random percentage for Y
+      x: 50 + Math.random() * 40, // Random percentage for X
+      y: 40 + Math.random() * 20, // Random percentage for Y
     }));
     setPositions(newPositions);
   };
