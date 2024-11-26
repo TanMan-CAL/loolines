@@ -9,7 +9,7 @@ function PeopleChip({ count }: { count: number }) {
 
   return (
     <div
-      className={`px-2 py-1 border gap-2 flex rounded-lg items-center text-2xl ${
+      className={`px-2 py-1 border gap-2 flex rounded-lg items-center justify-center text-2xl w-[120px] ${
         count < 15 ? quickStyle : tardyStyle
       }`}
     >
@@ -22,7 +22,7 @@ function PeopleChip({ count }: { count: number }) {
 function TimeChip( { count }: { count: number } ) {
   return (
     <div
-      className={`px-2 py-1 border gap-2 flex rounded-lg items-center bg-[#e1e3e6] text-[#717882]`}
+      className={`px-2 py-1 border gap-2 flex rounded-lg items-center w-[120px] bg-[#e1e3e6] text-[#717882]`}
     >
       <Timer />
       <p className="font-semibold text-2xl">{count * 1.5}</p>
