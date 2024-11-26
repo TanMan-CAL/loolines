@@ -9,6 +9,7 @@ interface CustomerData {
   restaurants: string;
   customers: number;
 }
+//bg-[#f8f8f8]
 
 export default function Menu() {
   const { getLatestCustomers } = useRestaurant();
@@ -58,10 +59,10 @@ export default function Menu() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="absolute top-4 left-4 z-50 flex flex-col gap-2 p-6 pt-4  border w-fit rounded-lg bg-[#f8f8f8]">
+    <div className="absolute top-4 left-4 z-50 flex flex-col gap-2 p-6 pt-4  border w-fit rounded-lg bg-[#1b1c25] border-[#151515]">
       <div className="flex place-items-baseline gap-3">
-        <h1 className="font-mono text-[60px]">{time}</h1>
-        <h2 className="font-mono text-[40px]">loolines</h2>
+        <h1 className="font-mono text-[60px] text-white">{time}</h1>
+        <h2 className="font-mono text-[40px] text-white">loolines</h2>
       </div>
 
       <RestaurantChip

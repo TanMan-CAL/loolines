@@ -8,7 +8,7 @@ function PeopleChip({ count }: { count: number }) {
 
   return (
     <div
-      className={`px-2 py-1 border gap-2 flex rounded-lg items-center justify-center text-2xl w-[100px] ${
+      className={`px-2 py-1 gap-2 flex rounded-lg items-center justify-center text-2xl w-[100px] ${
         count < 15 ? quickStyle : tardyStyle
       }`}
     >
@@ -40,10 +40,10 @@ export default function Restaurant({
   count: number;
 }) {
   return (
-    <div className="flex items-center w-[420px] justify-between">
+    <div className="flex items-center w-[420px] justify-between text-white">
       <div className="flex flex-col">
         <p className="text-[16px] font-medium">{name}</p>
-        <p className="text-[#5b5b5b]">{times}</p>
+        <p className="text-[#808080]">{times}</p>
       </div>
 
       <div className="flex gap-[8px]">

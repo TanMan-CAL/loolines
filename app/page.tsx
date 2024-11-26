@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div
       className="w-full h-screen relative bg-cover bg-center"
-      style={{ backgroundImage: `url(/TimHortons.png)` }}
+      style={{ backgroundImage: `url(/nmvfff.png)` }}
     >
       <Menu />
       <Dots />
