@@ -1,5 +1,0 @@
-asyncio
-bleak
-datetime
-mac-vendor-lookup
-nest-asyncio
