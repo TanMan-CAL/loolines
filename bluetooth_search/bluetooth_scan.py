@@ -29,7 +29,7 @@ except Exception as e:
 rssi_history = {}
 
 def calculate_distance(rssi, rssi_at_1m=-RSSI_AT_ONE, path_loss_exponent=PATH_LOSS_EXP):
-    """Calculates distance based on RSSI."""
+    """Calculates distance based on RSSI. Received Signal Strength Indicator"""
     try:
         return 10 ** ((rssi_at_1m - rssi) / (10 * path_loss_exponent))
     except Exception as e:

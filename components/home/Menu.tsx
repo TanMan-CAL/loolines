@@ -61,22 +61,22 @@ export default function Menu() {
   }, []);
   return (
     <div>
-    <div className="absolute top-4 left-4 z-50 flex flex-col gap-2 p-6 pt-4  border w-fit rounded-lg bg-[#1b1c25] border-[#151515]">
-      <div className="flex place-items-baseline gap-3">
-        <h1 className="font-mono text-[60px] text-white">{time}</h1>
-        <h2 className="font-mono text-[40px] text-white">loolines</h2>
-      </div>
+      <div className="absolute top-4 left-4 z-50 flex flex-col gap-2 p-6 pt-4  border w-fit rounded-lg bg-[#1b1c25] border-[#151515]">
+        <div className="flex place-items-baseline gap-3">
+          <h1 className="font-mono text-[60px] text-white">{time}</h1>
+          <h2 className="font-mono text-[40px] text-white">loolines</h2>
+        </div>
 
-      <RestaurantChip
-        key={"Tim Hortons"}
-        name={"Tim Hortons"}
-        times={"10:00 - 19:30"}
-        count={count}
-      />
-    </div>
-    <div className="absolute top-4 right-4 z-50 flex flex-col gap-2 p-6 pt-4 border w-fit rounded-lg">
-        <PredictionChip />
+        <RestaurantChip
+          key={"Tim Hortons"}
+          name={"Tim Hortons"}
+          times={"10:00 - 19:30"}
+          count={count}
+        />
       </div>
+      {/* <div className="absolute top-4 right-4 z-50 flex flex-col gap-2 p-6 pt-4 border w-fit rounded-lg">
+        <PredictionChip />
+      </div> */}
     </div>
   );
 }
