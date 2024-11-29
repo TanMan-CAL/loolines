@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { createSupabaseClient } from "@/lib/supabase/client";
 import { useRestaurant } from "@/lib/supabase/useRestaurant";
+interface CustomerData {
+  restaurant: string;
+  count: number;
+}
 
 const supabase = createSupabaseClient();
 
@@ -14,7 +18,7 @@ export default function Dots() {
     // Fetch initial count
     getLatestCustomers().then((data) => {
       if (data && data.length > 0) {
-        const customerCount = Math.min(data[0].customers, 50);
+        const customerCount = Math.min(data[0].count, 80);
         setCount(customerCount);
         generateRandomPositions(customerCount);
       }
@@ -26,12 +30,12 @@ export default function Dots() {
       .on(
         "postgres_changes",
         {
-          event: "UPDATE",
+          event: "INSERT", //from Updated
           schema: "public",
-          table: "customersAtRestaurantsV2",
+          table: "customersRealTime", //new db
         },
         (payload: any) => {
-          const updatedCount = Math.min(payload.new.customers, 50);
+          const updatedCount = Math.min(payload.new.count, 50);
           setCount(updatedCount);
           generateRandomPositions(updatedCount);
         }

@@ -7,8 +7,8 @@ import { useRestaurant } from "@/lib/supabase/useRestaurant";
 import PredictionChip from "../ui/PredictionChip";
 const supabase = createSupabaseClient();
 interface CustomerData {
-  restaurants: string;
-  customers: number;
+  restaurant: string;
+  count: number;
 }
 //bg-[#f8f8f8]
 
@@ -18,21 +18,21 @@ export default function Menu() {
   const [time, setTime] = useState<string>("00:00");
 
   useEffect(() => {
-    getLatestCustomers().then((data) => setCount(data[0].customers));
+    getLatestCustomers().then((data) => setCount(data[0].count));
 
     const channel = supabase
       .channel("schema-db-changes")
       .on(
         "postgres_changes",
         {
-          event: "UPDATE",
+          event: "INSERT", //from updated
           schema: "public",
-          table: "customersAtRestaurantsV2",
+          table: "customersRealTime", //new db
         },
         (payload: any) => {
           console.log("Received payload:", payload);
           const updatedData: CustomerData = payload.new;
-          setCount(updatedData.customers);
+          setCount(updatedData.count);
         }
       )
       .subscribe();
