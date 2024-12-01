@@ -11,6 +11,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        spotGreen: "#30AD4F",
+        borderGreen: "#00FF73",
+        spotRed: "#74011F",
+        borderRed: "#C00013",
       },
     },
   },

@@ -4,15 +4,15 @@ import { Timer } from "lucide-react";
 
 function PeopleChip({ count }: { count: number }) {
   const quickStyle = "bg-[#4FB268] text-[#00FF73]";
-  const tardyStyle = "bg-[#B24F50] text-[#FF7684]";
+  const tardyStyle = "bg-[#74011F] text-[#FF265E]";
 
   return (
     <div
-      className={`px-2 py-1 gap-2 flex rounded-lg items-center justify-center text-2xl w-[100px] ${
-        count < 15 ? quickStyle : tardyStyle
+      className={`px-2 py-2 gap-2 flex rounded-lg items-center justify-center text-2xl w-[100px] ${
+        count <= 25 ? quickStyle : tardyStyle
       }`}
     >
-      <PersonStanding size={30} />
+      <PersonStanding size={35} />
       <p className="font-semibold">{count}</p>
     </div>
   );
@@ -21,11 +21,14 @@ function PeopleChip({ count }: { count: number }) {
 function TimeChip({ count }: { count: number }) {
   return (
     <div
-      className={`px-2 py-1 border gap-2 flex rounded-lg items-center w-[100px] bg-[#e1e3e6] text-[#717882] text-2xl`}
+      className={`px-2 py-2 border gap-2 flex rounded-lg  w-[120px] bg-[#e1e3e6] text-[#717882] text-2xl`}
     >
       <Timer size={30} />
-      <p className="font-semibold">{Math.round(count * 1.1)}</p>
-      {/* <p className="font-semibold font-xs">min</p> */}
+
+      <div className="flex gap-1 ">
+        <p className="font-semibold">{Math.floor(count * 1.2)}</p>
+        <p className="font-semibold text-[14px]">min</p>
+      </div>
     </div>
   );
 }
@@ -40,7 +43,7 @@ export default function Restaurant({
   count: number;
 }) {
   return (
-    <div className="flex items-center w-[420px] justify-between text-white">
+    <div className="flex items-center  justify-between text-white">
       <div className="flex flex-col">
         <p className="text-[16px] font-medium">{name}</p>
         <p className="text-[#808080]">{times}</p>

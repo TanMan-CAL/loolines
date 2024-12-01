@@ -62,14 +62,14 @@ export default function Menu() {
   return (
     <div>
       <div className="absolute top-4 left-4 z-50 flex flex-col gap-2 p-6 pt-4  border w-fit rounded-lg bg-[#1b1c25] border-[#151515]">
-        <div className="flex place-items-baseline gap-3">
-          <h1 className="font-mono text-[60px] text-white">{time}</h1>
-          <h2 className="font-mono text-[40px] text-white">loolines</h2>
+        <div className="flex place-items-baseline gap-2">
+          <h1 className="font-mono text-[50px] text-white">{time}</h1>
+          <h2 className="text-[40px] text-white">iwantTimmies</h2>
         </div>
 
         <RestaurantChip
-          key={"Tim Hortons"}
-          name={"Tim Hortons"}
+          key={"Tim Hortons SLC"}
+          name={"Tim Hortons SLC"}
           times={"10:00 - 19:30"}
           count={count}
         />

@@ -51,7 +51,7 @@ export default function Dots() {
   const generateRandomPositions = (dotCount: number) => {
     const newPositions = Array.from({ length: dotCount }, () => ({
       x: 50 + Math.random() * 40, // Random percentage for X
-      y: 40 + Math.random() * 20, // Random percentage for Y
+      y: 20 + Math.random() * 20, // Random percentage for Y
     }));
     setPositions(newPositions);
   };
@@ -61,12 +61,16 @@ export default function Dots() {
       {positions.map((pos, index) => (
         <div
           key={index}
-          className="absolute border-green-500 bg-green-700 rounded-full"
+          className={`absolute rounded-full border-2 ${
+            count <= 25
+              ? "bg-spotGreen border-borderGreen"
+              : "bg-spotRed border-borderRed"
+          }`}
           style={{
             width: "20px",
             height: "20px",
             left: `${pos.x}%`,
-            top: `${pos.y}%`,
+            bottom: `${pos.y}%`,
           }}
         />
       ))}
