@@ -24,7 +24,7 @@ function TimeChip({ count }: { count: number }) {
       className={`px-2 py-1 border gap-2 flex rounded-lg items-center w-[100px] bg-[#e1e3e6] text-[#717882] text-2xl`}
     >
       <Timer size={30} />
-      <p className="font-semibold">{count * 1.5}</p>
+      <p className="font-semibold">{Math.round(count * 1.1)}</p>
       {/* <p className="font-semibold font-xs">min</p> */}
     </div>
   );
