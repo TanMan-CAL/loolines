@@ -62,7 +62,7 @@ export default function Dots() {
         <div
           key={index}
           className={`absolute rounded-full border-2 ${
-            count <= 25
+            count <= 30
               ? "bg-spotGreen border-borderGreen"
               : "bg-spotRed border-borderRed"
           }`}

@@ -9,7 +9,7 @@ function PeopleChip({ count }: { count: number }) {
   return (
     <div
       className={`px-2 py-2 gap-2 flex rounded-lg items-center justify-center text-2xl w-[100px] ${
-        count <= 25 ? quickStyle : tardyStyle
+        count <= 30 ? quickStyle : tardyStyle
       }`}
     >
       <PersonStanding size={35} />
