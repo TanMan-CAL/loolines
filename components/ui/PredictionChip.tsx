@@ -31,9 +31,9 @@ const PredictionChip = () => {
       } else {
         setAns("Error: " + result.error); // Display any errors sent from the backend
       }
-    } catch (error: any) {
+    } catch (error) {
       console.log("Error:", error);
-      setAns("Failed to get prediction: " + error.message); // Display any network or other errors
+      // Display any network or other errors
     }
   };
 

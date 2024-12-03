@@ -2,10 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { createSupabaseClient } from "@/lib/supabase/client";
 import { useRestaurant } from "@/lib/supabase/useRestaurant";
-interface CustomerData {
-  restaurant: string;
-  count: number;
-}
 
 const supabase = createSupabaseClient();
 
@@ -34,7 +30,7 @@ export default function Dots() {
           schema: "public",
           table: "customersRealTime", //new db
         },
-        (payload: any) => {
+        (payload) => {
           const updatedCount = Math.min(payload.new.count, 50);
           setCount(updatedCount);
           generateRandomPositions(updatedCount);

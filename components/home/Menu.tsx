@@ -1,10 +1,8 @@
 "use client";
-import { restaurants_slc } from "@/constants/restaurants";
 import { createSupabaseClient } from "@/lib/supabase/client";
 import React, { useEffect, useState } from "react";
 import RestaurantChip from "../ui/RestaurantChip";
 import { useRestaurant } from "@/lib/supabase/useRestaurant";
-import PredictionChip from "../ui/PredictionChip";
 const supabase = createSupabaseClient();
 interface CustomerData {
   restaurant: string;
