@@ -43,7 +43,7 @@ export default function Restaurant({
   count: number;
 }) {
   return (
-    <div className="flex items-center  justify-between text-white">
+    <div className="flex items-center justify-between text-white">
       <div className="flex flex-col">
         <p className="text-[16px] font-medium">{name}</p>
         <p className="text-[#808080]">{times}</p>
