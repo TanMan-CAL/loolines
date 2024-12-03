@@ -4,10 +4,6 @@ import React, { useEffect, useState } from "react";
 import RestaurantChip from "../ui/RestaurantChip";
 import { useRestaurant } from "@/lib/supabase/useRestaurant";
 const supabase = createSupabaseClient();
-interface CustomerData {
-  restaurant: string;
-  count: number;
-}
 //bg-[#f8f8f8]
 
 export default function Menu() {
@@ -27,9 +23,9 @@ export default function Menu() {
           schema: "public",
           table: "customersRealTime", //new db
         },
-        (payload: any) => {
+        (payload) => {
           console.log("Received payload:", payload);
-          const updatedData: CustomerData = payload.new;
+          const updatedData = payload.new;
           setCount(updatedData.count);
         }
       )
