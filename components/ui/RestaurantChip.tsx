@@ -27,7 +27,7 @@ function TimeChip({ count }: { count: number }) {
 
       <div className="flex gap-1 ">
         <p className="font-semibold">{Math.floor(count * 1.2)}</p>
-        <p className="font-semibold text-[14px]">min</p>
+        <p className="font-semibold text-[16px]">min</p>
       </div>
     </div>
   );
