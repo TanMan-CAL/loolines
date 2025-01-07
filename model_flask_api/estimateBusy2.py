@@ -8,7 +8,7 @@ def convert_degree(X, deg):
     # add the polynomial with different degress
     newarr = X
     for i in range(1, deg+1):
-        newarr = np.hstack((newarr, X**i))
+        newarr = np.hstack((newarr, X**i)) # horizontal stack
     return newarr 
 
 def predict(time_of_day, model):
