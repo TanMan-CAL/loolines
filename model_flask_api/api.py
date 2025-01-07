@@ -26,8 +26,6 @@ def get_model():
 
             dt = data.get("date")
             time = data.get("time")
-
-            # List of valid days of the week
             datelist = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
     
@@ -43,14 +41,12 @@ def get_model():
             globalpred = pred
 
             print(f"Prediction: {pred} for {dt} at {time}")
-
-            # Return the prediction in the response
+            
             pred = pred.flatten()[0]
             return jsonify({"prediction": int(pred)})
 
     except Exception as e:
         print("Error updating: ", e)
-        return jsonify({"error": str(e)}), 500  # Handle server errors
 
 # Run the app on port 5000
 if __name__ == "__main__":
