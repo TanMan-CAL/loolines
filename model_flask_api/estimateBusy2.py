@@ -16,24 +16,18 @@ def predict(time_of_day, model):
     return predicted_value
 
 def train_model():
-    #loaded dataset from csv file
     df = pd.read_csv("C:/Advey/SE101Clone/SE101/tim_hortons_traffic_multimodal.csv")
-
-    #set encoder
     encoder = OneHotEncoder()
     weather_encoded = arr=encoder.fit_transform(df['Weather'].values.reshape(-1, 1)).toarray()
     # weather_encoded = np.array([int(np.where(weather_encoded[i] == 1)[0]) for i in range(len(weather_encoded))])
-
-    # Step 2: Time of Day 
+    
     time_data = df['Time of Day (minutes)'].values
     time_data = time_data / (7 * 24 * 60)  # Normalize the time between 0 and 1
 
-    # Step 3: Number of People 
     people_data = df['Number of People'].values
     scale = max(people_data) 
     people_data = people_data / scale
 
-    # Step 4: Create input tensors for TensorFlow
     # x1_train = tf.constant(weather_encoded, dtype=tf.float32)  # One-hot encoded weather data
     x2_train = tf.constant(convert_degree(time_data.reshape(-1, 1), 20), dtype=tf.float32)  # Normalized time data
     y_train = tf.constant(people_data, dtype=tf.float32)  # Number of people
